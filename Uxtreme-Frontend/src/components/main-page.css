@@ -1,0 +1,59 @@
+div {
+    padding: 0;
+    margin: 0;
+}
+
+.background {
+    height: 100vh;
+    width: 100wh;
+    background-color: #141013;
+
+    display: grid;
+    grid-template-rows: auto 1fr; /* Two rows: one for the top div and one for the bottom divs */
+    grid-template-columns: 1fr;    /* One column to start, will be split later */
+}
+
+.top-navbar {
+    height: 70px;
+    grid-column: span 1; 
+    border-bottom: solid 1px white;
+
+    padding: 0 10px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.side-navbar {
+    grid-column: span 1;     /* Left div takes 30% of the width */
+    width: 280px;              /* Explicitly set the width */
+    border-right: solid 1px white;
+}
+
+.main-content {
+    grid-column: span 1;     /* Right div takes 70% of the width */
+    width: 70%;              /* Explicitly set the width */
+}
+
+.icon {
+    height: 47px;
+    width: 47px;
+    border-radius: 50%;
+}
+
+.input-myLocation {
+  width: 250px;
+  background-color: #242424;
+  border: none;
+  border-radius: 7px;
+  padding: 8px;
+  color: #F7F7F7;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
