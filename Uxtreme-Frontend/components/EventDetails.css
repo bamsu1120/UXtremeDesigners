@@ -1,0 +1,121 @@
+.event-details-page {
+    padding: 32px;
+    color: white;
+    background-color: #121212;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.event-details-page h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.event-details-page .location-date {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.club-button {
+    background-color: #3a2e2e;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.event-image-wrapper {
+    margin-bottom: 1rem;
+}
+
+.event-image {
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+    max-height: 400px;
+}
+
+.attendance-info {
+    font-size: 1rem;
+    margin: 1rem 0 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.going-interested {
+    font-size: 22px;
+}
+
+.free-entry {
+    color: #66ff66;
+    margin-bottom: 1rem;
+}
+
+.paid-entry {
+    color: #ff6666;
+    margin-bottom: 1rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 0.5rem;
+}
+
+.action-buttons button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.interested {
+    background-color: #2e2e2e;
+    color: white;
+}
+
+.going {
+    background-color: #3b3b3b;
+    color: white;
+}
+
+/* on hover */
+.going:hover {
+    background-color: #66ff66;
+    color: black;
+}
+
+.invite {
+    background-color: #3b3b3b;
+    color: white;
+}
+
+.event-description {
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.event-hashtags {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hashtag {
+    background-color: #2a2a2a;
+    color: #aad6ff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.hashtag:hover {
+    background-color: #3c3c3c;
+}
