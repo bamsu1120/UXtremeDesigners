@@ -1,8 +1,8 @@
 import React from 'react';
 import './EventCard.css'
 
-type EventCardProps = {
-    image: string;
+export type EventCardProps = {
+    image?: string;
     title: string;
     date: string;
     location: string;
@@ -11,6 +11,7 @@ type EventCardProps = {
     attendees: number;
     capacity: number;
     isFree: boolean;
+    viewDetails?: (eventTitle: string) => void;
 };
 
 const EventCard: React.FC<EventCardProps> = ({
@@ -23,6 +24,7 @@ const EventCard: React.FC<EventCardProps> = ({
     attendees,
     capacity,
     isFree,
+    viewDetails,
 }) => {
     return (
         <div className="event-card">
@@ -40,7 +42,9 @@ const EventCard: React.FC<EventCardProps> = ({
                 <div className="event-footer">
                     <button className="club-button">{club}</button>
                     {/* add a onClick so that it redirects to Event Details */}
-                    <button className="see-details">See Details</button>
+                    <button className="see-details" onClick={() => {
+                        viewDetails?.(title);
+                    }}>See Details</button>
                 </div>
             </div>
         </div>

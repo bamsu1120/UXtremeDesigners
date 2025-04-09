@@ -1,12 +1,12 @@
 import React from 'react';
 import './EventDetails.css';
 
-type Props = {
+type EventDetailProps = {
     image: string;
     title: string;
     date: string;
     location: string;
-    price: number;
+    price: string;
     club: string;
     attendees: number;
     interested: number;
@@ -14,9 +14,10 @@ type Props = {
     isFree: boolean;
     description: string;
     tags: string[]
+    onBack: () => void;
 };
 
-const EventDetails: React.FC<Props> = ({
+const EventDetails: React.FC<EventDetailProps> = ({
     title,
     location,
     date,
@@ -27,10 +28,12 @@ const EventDetails: React.FC<Props> = ({
     price,
     description,
     club,
-    tags
+    tags,
+    onBack
 }) => {
     return (
         <div className="event-details-page">
+            <button onClick={onBack}>Back</button>
             <h1>{title}</h1>
             <button className="club-button">{club}</button>
             <div className="location-date">
@@ -53,7 +56,7 @@ const EventDetails: React.FC<Props> = ({
 
             {/* if it's a free event, we use the class "free-entry" otherwise we use the class "paid-entry" */}
             <p className={isFree ? "free-entry" : "paid-entry"}>
-                {isFree ? "✔ Free entry" : <>${price}</>}
+                {isFree ? "✔ Free entry" : <>{price}</>}
             </p>
 
             <p className="event-description">

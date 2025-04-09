@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import MainPage from './components/main-page'
-import EventCard from '../components/EventCard'
-import EventDetails from '../components/EventDetails'
+import EventCard from './components/EventCard'
+import EventDetails from './components/EventDetails'
 
 function App() {
   return (

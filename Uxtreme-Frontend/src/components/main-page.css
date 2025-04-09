@@ -31,9 +31,24 @@ div {
     border-right: solid 1px #F7F7F7;
 }
 
+.body-container {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;  /* Disable vertical scrolling */
+}
+
 .main-content {
-    grid-column: span 1;     /* Right div takes 70% of the width */
-    width: 70%;              /* Explicitly set the width */
+    padding: 20px;
+    background-color: #141013;     
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .icon {
