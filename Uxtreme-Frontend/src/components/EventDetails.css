@@ -78,6 +78,16 @@
     color: white;
 }
 
+.interested:hover {
+    background-color: #66ff66;
+    color: black;
+}
+
+.interest:active {
+    background-color: #a6ffa6;
+    color: black;
+}
+
 .going {
     background-color: #3b3b3b;
     color: white;
@@ -86,6 +96,11 @@
 /* on hover */
 .going:hover {
     background-color: #66ff66;
+    color: black;
+}
+
+.going:active {
+    background-color: #a6ffa6;
     color: black;
 }
 

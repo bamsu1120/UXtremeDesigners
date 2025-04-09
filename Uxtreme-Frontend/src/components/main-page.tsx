@@ -1,16 +1,24 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import FriendActivity, { Status } from "./friend-activity";
-import EventHub from "./event-hub";
+import EventHub, { Event } from "./event-hub";
+
+import events from '../stubdata/events.json';
 
 import friends from '../stubdata/friends.json'
 import './main-page.css'
 
+export type EventRegistration = {
+    event: Event;
+    type: 'Going' | 'Interested';
+}
+
 function MainPage() {
     const [currentView, setCurrentView] = useState("Events"); //Valid values: Events, Friends, Your Events
-    // useEffect(()=>{
-    //     console.log(currentView)
-    // },[currentView])
+
+    // Used to find in the stubs the current users friends and Events
+    // const [userFriends, setUserFriends] = useState<string[]>([]);
+    const [userEvents, setUserEvents] = useState<EventRegistration[]>([]);
   
     return (
       <>
@@ -57,9 +65,21 @@ function MainPage() {
                     </div>
                 </div>
                 <div className="main-content">
-                    {currentView === "Events" && <EventHub/>}
+                    {currentView === "Events" && 
+                        <EventHub
+                            userEvents={userEvents}
+                            setUserEvents={setUserEvents}
+                            events={events as Event[]}
+                            header="Event Hub"
+                        />}
                     {currentView === "Friends" && <p>no</p>}
-                    {currentView === "Your Events" && <p>maybe</p>}
+                    {currentView === "Your Events" &&    
+                        <EventHub
+                            userEvents={userEvents}
+                            setUserEvents={setUserEvents}
+                            header="Your Events"
+                            events={userEvents.map((reg) => reg.event)}
+                        />}
                 </div>
             </div>
         </div>

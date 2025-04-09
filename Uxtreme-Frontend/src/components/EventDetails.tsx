@@ -15,6 +15,7 @@ type EventDetailProps = {
     description: string;
     tags: string[]
     onBack: () => void;
+    onRegister: (rtype: 'Going' | 'Interested') => void;
 };
 
 const EventDetails: React.FC<EventDetailProps> = ({
@@ -29,7 +30,8 @@ const EventDetails: React.FC<EventDetailProps> = ({
     description,
     club,
     tags,
-    onBack
+    onBack,
+    onRegister
 }) => {
     return (
         <div className="event-details-page">
@@ -48,8 +50,12 @@ const EventDetails: React.FC<EventDetailProps> = ({
             <div className="attendance-info">
                 <div className='going-interested'><strong>{attendees} Going</strong> | <strong>{interested} Interested</strong></div>
                 <div className="action-buttons">
-                    <button className="interested">Interested ?</button>
-                    <button className="going">Going ✔</button>
+                    <button className="interested" onClick={()=>{
+                        onRegister('Interested');
+                    }}>Interested ?</button>
+                    <button className="going" onClick={()=>{
+                        onRegister('Going');
+                    }}>Going ✔</button>
                     <button className="invite">Invite</button>
                 </div>
             </div>

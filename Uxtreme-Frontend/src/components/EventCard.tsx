@@ -12,6 +12,7 @@ export type EventCardProps = {
     capacity: number;
     isFree: boolean;
     viewDetails?: (eventTitle: string) => void;
+    unregisterVisible?: boolean
 };
 
 const EventCard: React.FC<EventCardProps> = ({
@@ -19,15 +20,16 @@ const EventCard: React.FC<EventCardProps> = ({
     title,
     date,
     location,
-    price,
     club,
     attendees,
     capacity,
     isFree,
     viewDetails,
+    unregisterVisible = false
 }) => {
     return (
         <div className="event-card">
+            {unregisterVisible && <button>unregister</button>}
             <img src={image} alt={title} className="event-image" />
             <div className="event-details">
                 <div className='event-header'>
