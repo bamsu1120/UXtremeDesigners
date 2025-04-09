@@ -16,7 +16,7 @@ div {
 .top-navbar {
     height: 70px;
     grid-column: span 1; 
-    border-bottom: solid 1px white;
+    border-bottom: solid 1px #F7F7F7;
 
     padding: 0 10px; 
     display: flex;
@@ -28,7 +28,7 @@ div {
 .side-navbar {
     grid-column: span 1;     /* Left div takes 30% of the width */
     width: 280px;              /* Explicitly set the width */
-    border-right: solid 1px white;
+    border-right: solid 1px #F7F7F7;
 }
 
 .main-content {
@@ -56,4 +56,59 @@ div {
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+.vert {
+    padding: 20px 0;
+    flex-direction: column;
+    border-bottom: solid 1px #F7F7F7;
+}
+
+.friends {
+    padding: 20px 0;
+    flex-direction: column;
+}
+
+.button-s1 {
+    width: 250px;
+    background-color: #242424;
+    border: none;
+    border: solid 1px #FFF65C;
+    border-radius: 10px;
+    padding: 10px;
+    color: #F7F7F7;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+.button-s1:hover {
+    background-color: #464646;
+}
+
+.button-s1:active {
+    background-color: #818181;
+}
+
+.button-s2 {
+    width: 200px;
+    background-color: #FFF65C;
+    border: solid 1px #FFF65C;
+    border-radius: 7px;
+    padding: 8px;
+    color: #242424;
+}
+
+.button-s2:hover {
+    background-color: #242424;
+    color: #FFF65C;
+    border: solid 1px #FFF65C;
+}
+
+.button-s2:active {
+    background-color: #616161;
+    color: #FFF65C;
+    border: solid 1px #FFF65C;
 }

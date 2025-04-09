@@ -1,6 +1,16 @@
+import { useEffect, useState } from "react";
+
+import FriendActivity from "./friend-activity";
+import { Status } from "./friend-activity";
+
+import friends from '../stubdata/friends.json'
 import './main-page.css'
 
 function MainPage() {
+    const [currentView, setCurrentView] = useState("Events"); //Valid values: Events, Friends, Your Events
+    // useEffect(()=>{
+    //     console.log(currentView)
+    // },[currentView])
   
     return (
       <>
@@ -23,10 +33,32 @@ function MainPage() {
                 </div>
             </div>
             <div className="side-navbar">
-
+                <div className="container vert">
+                    <button className='button-s1' onClick={()=>{setCurrentView("Events")}}>
+                        <img src="./src/assets/people.png" alt="people" />  Event Hub
+                    </button>
+                    <button className='button-s1' onClick={()=>{setCurrentView("Friends")}}>
+                        <img src="./src/assets/mood.png" alt="people" />  Friend Finder
+                    </button>
+                    <button className='button-s2' onClick={()=>{setCurrentView("Your Events")}}>
+                        My Events
+                    </button>
+                </div>
+                <div className="container friends">
+                    {friends.friends.map((friend)=>(
+                        <FriendActivity
+                            key={friend.friendname}
+                            friendName={friend.friendname}
+                            status={friend.status as Status}
+                            image="./src/assets/choppa.jpg"
+                        />
+                    ))}
+                </div>
             </div>
             <div className="main-content">
-
+                {currentView === "Events" && <p>yes</p>}
+                {currentView === "Friends" && <p>no</p>}
+                {currentView === "Your Events" && <p>maybe</p>}
             </div>
         </div>
       </>

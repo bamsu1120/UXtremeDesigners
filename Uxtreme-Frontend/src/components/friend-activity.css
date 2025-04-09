@@ -1,0 +1,43 @@
+.friend-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    gap: 15px;
+}
+
+.friend-container p{
+    color: #F7F7F7;
+}
+
+.yes {
+    position: relative;
+    display: inline-block;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    border: solid 1px black;
+  }
+  
+  .status-dot.online {
+    background-color: #22c55e; /* green */
+  }
+  
+  .status-dot.offline {
+    background-color: #9ca3af; /* gray */
+  }
+  
+  .status-dot.idle {
+    background-color: #facc15; /* yellow */
+  }
+  
+  .status-dot.error {
+    background-color: #ef4444; /* red */
+  }

@@ -1,0 +1,29 @@
+{
+    "friends":[
+        {
+            "friendname": "Tom",
+            "status": "online",
+            "image": "link"
+        },
+        {
+            "friendname": "Nick",
+            "status": "online",
+            "image": "link"
+        },
+        {
+            "friendname": "Alex",
+            "status": "idle",
+            "image": "link"
+        },
+        {
+            "friendname": "Assane",
+            "status": "offline",
+            "image": "link"
+        },
+        {
+            "friendname": "Yan",
+            "status": "error",
+            "image": "link"
+        }
+    ]
+}
