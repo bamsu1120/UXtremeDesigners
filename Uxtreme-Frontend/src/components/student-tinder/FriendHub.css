@@ -1,0 +1,65 @@
+.friend-hub {
+    background-color: #121212;
+    color: white;
+    font-family: 'Georgia', serif;
+    padding: 40px;
+    min-height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.dropdown {
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.passions-filter {
+    display: flex;
+    align-items: center;
+    background-color: #1f1f1f;
+    padding: 10px 15px;
+    border-radius: 10px;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.tag {
+    background-color: #333;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.add-button {
+    font-size: 18px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.friends-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}

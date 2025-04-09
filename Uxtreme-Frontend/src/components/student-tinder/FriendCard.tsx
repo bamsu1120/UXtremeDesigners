@@ -1,7 +1,7 @@
 import React from "react";
 import "./FriendCard.css";
 
-type Friend = {
+export type Friend = {
   id: number;
   name: string;
   program: string;
