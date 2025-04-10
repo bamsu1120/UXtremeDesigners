@@ -10,17 +10,20 @@ export type Friend = {
   clubs: string[];
   imageUrl: string;
   bio: string;
+  status: string;
 };
 
 type Props = {
   friend: Friend;
+  onBlock: (id: number) => void;
+  onFollow: (id: number) => void;
 };
 
-const FriendCard: React.FC<Props> = ({ friend }) => {
+const FriendCard: React.FC<Props> = ({ friend, onBlock, onFollow}) => {
   return (
     <div className="friend-card">
       <img
-        src={`/user-profile-images/${friend.imageUrl}`}
+        src={friend.imageUrl}
         alt={friend.name}
         className="friend-image"
       />
@@ -40,9 +43,13 @@ const FriendCard: React.FC<Props> = ({ friend }) => {
         </div>
 
         <div className="friend-buttons">
-          <button className="btn btn-yellow">Message 🔍</button>
-          <button className="btn btn-yellow">Invite ✉️</button>
-          <button className="btn btn-red">Block ✖</button>
+          <button className="btn btn-yellow">Message<img src="./src/assets/search.png" alt="search" width={'15px'} height={'15px'}/></button>
+          <button className="btn btn-yellow" onClick={() => {
+            onFollow(friend.id);
+          }}>Invite <img src="./src/assets/mail.png" alt="mail" width={'15px'} height={'15px'}/></button>
+          <button className="btn btn-red" onClick={()=> {
+            onBlock(friend.id);
+          }}>✖</button>
         </div>
       </div>
     </div>

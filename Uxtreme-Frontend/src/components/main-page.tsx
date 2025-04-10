@@ -2,10 +2,13 @@ import { useState } from "react";
 
 import FriendActivity, { Status } from "./friend-activity";
 import EventHub, { Event } from "./event-hub";
+import FriendHub from "./student-tinder/FriendHub";
+import { Friend } from "./student-tinder/FriendCard";
 
 import events from '../stubdata/events.json';
-
 import friends from '../stubdata/friends.json'
+import people from '../stubdata/people.json'
+
 import './main-page.css'
 
 export type EventRegistration = {
@@ -17,12 +20,16 @@ function MainPage() {
     const [currentView, setCurrentView] = useState("Events"); //Valid values: Events, Friends, Your Events
 
     // Used to find in the stubs the current users friends and Events
-    // const [userFriends, setUserFriends] = useState<string[]>([]);
+    const [userFriends, setUserFriends] = useState<Friend[]>([]);
     const [userEvents, setUserEvents] = useState<EventRegistration[]>([]);
     const [notifVisible, setNotifVisible] = useState<boolean>(false);
 
     function toggleNotifs(){
         setNotifVisible(!notifVisible);
+    }
+
+    function addFriend(friend: Friend){
+        setUserFriends([...userFriends, friend]);
     }
   
     return (
@@ -75,12 +82,12 @@ function MainPage() {
                         </button>
                     </div>
                     <div className="container friends">
-                        {friends.friends.map((friend)=>(
+                        {userFriends.map((friend)=>(
                             <FriendActivity
-                                key={friend.friendname}
-                                friendName={friend.friendname}
+                                key={friend.id}
+                                friendName={friend.name}
                                 status={friend.status as Status}
-                                image="./src/assets/choppa.jpg"
+                                image={friend.imageUrl}
                             />
                         ))}
                     </div>
@@ -94,7 +101,12 @@ function MainPage() {
                             events={events as Event[]}
                             header="Event Hub"
                         />}
-                    {currentView === "Friends" && <p>no</p>}
+                    {currentView === "Friends" && 
+                        <FriendHub
+                            friends={userFriends}
+                            setFriends={setUserFriends}
+                        />
+                    }
                     {currentView === "Your Events" &&    
                         <EventHub
                             unregisterEnabled={true}

@@ -1,0 +1,112 @@
+[
+    {
+        "id": 0,
+        "name": "Amy",
+        "program": "History",
+        "classYear": "2026",
+        "status": "online",
+        "passions": ["anime", "food", "bs"],
+        "clubs": ["Space Concordia", "IEEE"],
+        "imageUrl": "https://media.istockphoto.com/id/1365601848/photo/portrait-of-a-young-woman-carrying-her-schoolbooks-outside-at-college.jpg?s=612x612&w=0&k=20&c=EVxLUZsL0ueYFF1Nixit6hg-DkiV52ddGw_orw9BSJA=",
+        "bio": "Hi, I'm Amy, a computer science major at Concordia University. I enjoy coding in Java and Python, and recently developed a fitness-tracking mobile app. I'm passionate about Hackathons and promoting diversity in tech. Let's connect and collaborate!"
+    },
+    {
+        "id": 1,
+        "name": "Daniel",
+        "program": "Mechanical Engineering",
+        "classYear": "2025",
+        "status": "error",
+        "passions": ["rock climbing", "robotics", "3D printing"],
+        "clubs": ["EngGames", "Space Concordia"],
+        "imageUrl": "https://media.istockphoto.com/id/1438185814/photo/college-student-asian-man-and-studying-on-laptop-at-campus-research-and-education-test-exam.jpg?s=612x612&w=0&k=20&c=YmnXshbaBxyRc4Nj43_hLdLD5FLPTbP0p_3-uC7sjik=",
+        "bio": "Hey, I'm Daniel! I'm all about building things—robots, drones, or even a 3D-printed skateboard. I'm currently working on a Mars rover prototype with my team. Always down to collaborate on tech-heavy projects!"
+    },
+    {
+        "id": 2,
+        "name": "Alina",
+        "program": "Psychology",
+        "classYear": "2027",
+        "status": "error",
+        "passions": ["journaling", "photography", "mental health"],
+        "clubs": ["Active Minds", "Photography Society"],
+        "imageUrl": "https://images.pexels.com/photos/1462630/pexels-photo-1462630.jpeg",
+        "bio": "Hi there, I'm Alina. I'm passionate about mental wellness and how storytelling and photography can help people heal. I hope to one day combine psych research with interactive media. Let’s share ideas!"
+    },
+    {
+        "id": 3,
+        "name": "Marcus",
+        "program": "Software Engineering",
+        "classYear": "2026",
+        "status": "online",
+        "passions": ["hackathons", "AI", "coffee"],
+        "clubs": ["IEEE", "Developer Student Club"],
+        "imageUrl": "https://t4.ftcdn.net/jpg/04/67/95/73/360_F_467957383_3yRd5rVS1KcK6mjVNXaNwnGkxe2JOqDu.jpg",
+        "bio": "Hey! I'm Marcus, a full-stack developer with a thing for AI and backend magic. Just wrapped up a React Native app that predicts mood from journal entries. Hit me up if you're into ML or just want to grab a coffee and code."
+    },
+    {
+        "id": 4,
+        "name": "Zara",
+        "program": "Marketing",
+        "classYear": "2024",
+        "status": "offline",
+        "passions": ["branding", "streetwear", "TikTok"],
+        "clubs": ["Enactus", "Startup Club"],
+        "imageUrl": "https://media.istockphoto.com/id/1588289977/photo/happy-black-females-student-during-a-class-in-lecture-hall-looking-at-camera.jpg?s=612x612&w=0&k=20&c=o2l4DsMWHhZ3Oqq8hxrGoKqJfC1S2kAfnjUHlRJuD-k=",
+        "bio": "Hey! I'm Zara, currently diving into how social media influences brand loyalty. I love creating content that pops and turning small ideas into viral campaigns. Let's work on a startup pitch together!"
+    },
+    {
+        "id": 5,
+        "name": "Leo",
+        "program": "Biology",
+        "classYear": "2026",
+        "status": "online",
+        "passions": ["nature", "baking", "genetics"],
+        "clubs": ["Science Society", "Environmental Club"],
+        "imageUrl": "https://as1.ftcdn.net/jpg/05/60/00/24/1000_F_560002450_oxu1G9y76P4vVPNugw0KMOrYi954v6XL.jpg",
+        "bio": "Hi, I'm Leo! I'm fascinated by CRISPR and how genetics can change the world. When I'm not in the lab, you’ll find me experimenting in the kitchen. Always looking for lab partners and baking buddies."
+    },
+    {
+        "id": 6,
+        "name": "Clara",
+        "program": "Art History",
+        "classYear": "2025",
+        "status": "offline",
+        "passions": ["museums", "sketching", "travel"],
+        "clubs": ["Art Hive", "International Students Office"],
+        "imageUrl": "https://media.istockphoto.com/id/1473893101/photo/cheerful-young-arab-student-female-listening-music-with-smartphone-and-earphones-outdoors.jpg?s=612x612&w=0&k=20&c=ko7tG0M44lHVPQmutI3d653xll4Ka8UOK8R2OIWGvRM=",
+        "bio": "Bonjour! I'm Clara, an art history nerd who dreams of curating my own gallery one day. I love talking about visual culture, ancient civilizations, and hidden gems in the city. Let’s explore together!"
+    },
+    {
+        "id": 7,
+        "name": "Dave",
+        "program": "Finance",
+        "classYear": "2026",
+        "status": "idle",
+        "passions": ["investing", "poker", "podcasts"],
+        "clubs": ["Finance Society", "Toastmasters"],
+        "imageUrl": "https://media.istockphoto.com/id/509349623/photo/happy-bookworm.jpg?s=612x612&w=0&k=20&c=2fPCQ8plw0TmUZH2tlnCTEkCrmbG_nkihDmyJPrg-EY=",
+        "bio": "Yo! I'm Dave. I analyze markets by day and host a finance podcast by night. I enjoy strategy games and exploring fintech innovations. Hit me up if you're into crypto, cash flow, or casual poker nights."
+    },
+    {
+        "id": 8,
+        "name": "Sarah",
+        "program": "Political Science",
+        "classYear": "2025",
+        "status": "online",
+        "passions": ["activism", "debating", "documentaries"],
+        "clubs": ["Model UN", "Social Justice Collective"],
+        "imageUrl": "https://media.sciencephoto.com/f0/25/45/03/f0254503-800px-wm.jpg",
+        "bio": "Hi, I’m Sarah. I’m deeply involved in advocacy work on campus and love engaging in conversations that matter. I recently helped organize a climate action panel. Let’s collaborate on meaningful change!"
+    },
+    {
+        "id": 9,
+        "name": "Kenji",
+        "program": "Computer Science",
+        "classYear": "2027",
+        "status": "idle",
+        "passions": ["game dev", "anime", "AR/VR"],
+        "clubs": ["Game Dev Concordia", "VR Club"],
+        "imageUrl": "https://i.pinimg.com/736x/86/0b/ee/860bee1e41d60103784414e6e4d51c4e.jpg",
+        "bio": "Yo! I'm Kenji. I’m into designing immersive AR experiences and building small games in Unity. Big fan of anime aesthetics in game design. Looking for teammates who vibe with fantasy worlds and cool mechanics!"
+    }
+]
