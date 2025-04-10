@@ -6,8 +6,6 @@ import FriendHub from "./student-tinder/FriendHub";
 import { Friend } from "./student-tinder/FriendCard";
 
 import events from '../stubdata/events.json';
-import friends from '../stubdata/friends.json'
-import people from '../stubdata/people.json'
 
 import './main-page.css'
 
@@ -26,10 +24,6 @@ function MainPage() {
 
     function toggleNotifs(){
         setNotifVisible(!notifVisible);
-    }
-
-    function addFriend(friend: Friend){
-        setUserFriends([...userFriends, friend]);
     }
   
     return (

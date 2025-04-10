@@ -1,33 +1,15 @@
-import { useState } from 'react'
 import MainPage from './components/main-page'
-import EventCard from './components/EventCard'
-import EventDetails from './components/EventDetails'
+import { Routes, Route } from 'react-router-dom';
 
-
-// const friends = [
-//   {
-//     id: 0,
-//     name: "user1",
-//     program: "History",
-//     classYear: "2026",
-//     passions: new Set(["anime", "food", "bs"]),
-//     clubs: ["Space Concordia", "IEEE"],
-//     imageUrl: "user1.jpg",
-//     bio: `Hi, I'm Amy, a computer science major at Concordia University. 
-//   I enjoy coding in Java and Python, and recently developed a fitness-tracking mobile app. 
-//   I'm passionate about Hackathons and promoting diversity in tech. 
-//   Let's connect and collaborate!`,
-//   },
-// ];
-
-// return (
-//   <>
-//     <FriendHub friends={Array(5).fill(friends).flat()} />
+import SignUp from './components/signup';
 
 function App() {
   return (
     <>
-      <MainPage/>
+      <Routes>
+            <Route path="/" element={<SignUp />} />
+            <Route path="/home" element={<MainPage />} />
+        </Routes>
     </>
   )
 }
