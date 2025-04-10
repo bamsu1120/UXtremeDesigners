@@ -13,6 +13,7 @@ export type Event = {
     location: string;
     price: string;
     club: string;
+    friends_attending: boolean;
     attendees: number;
     capacity: number;
     isFree: boolean;
@@ -40,6 +41,8 @@ function EventHub({
  const [detailMode, setDetailMode] = useState<boolean>(false);
  const [selectedEvent, setSelectedEvent] = useState<Event>(events.find((event)=> event.title === "") as Event);
  const [searchQuery, setSearchQuery] = useState<string>("");
+
+ const [friendsFilter, setFriendsFilter] = useState<boolean>(false)
 
  //Tags provided by User
  //Search Parameter
@@ -69,8 +72,14 @@ function EventHub({
     }
 
     useEffect(()=>{
-        setFilteredList((events.filter((event) => event.title.toLowerCase().includes(searchQuery)) ?? []) as Event[]);
-    },[searchQuery,events])
+        setFilteredList((events.filter((event) => {
+            if(friendsFilter){
+                return event.title.toLowerCase().includes(searchQuery.toLowerCase()) && event.friends_attending
+            } else{
+                return event.title.toLowerCase().includes(searchQuery.toLowerCase())
+            }
+        }) ?? []) as Event[]);
+    },[searchQuery, events, friendsFilter])
 
     function updateSearchQuery(event: React.ChangeEvent<HTMLInputElement>){
         setSearchQuery(event.target.value);
@@ -79,6 +88,11 @@ function EventHub({
     function loadEventDetails(eventName: string){
         setSelectedEvent(events.find((event)=> event.title === eventName) as Event);
         setDetailMode(true);
+    }
+
+    function toggleFriends(){
+        setFriendsFilter(!friendsFilter);
+        console.log(friendsFilter);
     }
 
   return (
@@ -91,6 +105,15 @@ function EventHub({
                     {header}
                 </h1>
                 <input type="text" className='input-myLocation' placeholder='Search' onChange={updateSearchQuery}/>
+                <div className="friend-toggle">
+                    <label className="toggle-switch">
+                        <input type="checkbox" onChange={toggleFriends}/>
+                        <div className="toggle-switch-background">
+                            <div className="toggle-switch-handle"></div>
+                        </div>
+                    </label>
+                    <p>Friends Attending</p>
+                </div>
             </div>
             <div className="scroll">
                 {filteredList.map((event) => (

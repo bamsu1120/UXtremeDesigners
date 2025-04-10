@@ -1,0 +1,101 @@
+.friend-hub {
+    background-color: #121212;
+    color: white;
+    font-family: 'Georgia', serif;
+    padding: 40px;
+    min-height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.dropdown {
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.passions-filter {
+    display: flex;
+    align-items: center;
+    background-color: #1f1f1f;
+    padding: 10px 15px;
+    border-radius: 10px;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.passion-input {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    width: 200px;
+    margin-right: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.passion-input:focus {
+    outline: none;
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+}
+
+.filter-label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.add-button {
+    font-size: 18px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.friends-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.passions-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.passion-tag {
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    padding: 0.3rem 0.7rem;
+    margin: 0.2rem;
+    display: inline-block;
+}
+
+.selected-passions {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.add-button {
+    padding: 0.3rem 0.6rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}

@@ -1,0 +1,2 @@
+export const programs = ["History", "Computer Science", "Mechanical Engineering", "Theatre", "English Literature", "Software Engineering"];
+export const passions = ["anime", "sports", "bar hopping", "reading", "gym"];
