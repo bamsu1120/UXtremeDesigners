@@ -54,7 +54,12 @@ const FriendHub: React.FC<FriendsList> = ({ friends }) => {
             type="text"
             placeholder="Add passion"
             value={newPassion}
-            onChange={(e) => setNewPassion(e.target.value.toLowerCase)}
+            onChange={(e) => setNewPassion(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleAddPassion();
+              }
+            }}
             className="passion-input"
           />
 
