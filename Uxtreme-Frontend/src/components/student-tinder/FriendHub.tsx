@@ -1,14 +1,28 @@
 import React, { useState } from "react";
-import { passions, programs } from "../../constants/filterOptions";
+import { programs } from "../../constants/filterOptions";
 import FriendCard, { Friend } from "./FriendCard";
 import "./FriendHub.css"; // We'll define styles here
 
 type FriendsList = {
   friends: Friend[];
 };
-
 const FriendHub: React.FC<FriendsList> = ({ friends }) => {
   const [selectedProgram, setSelectedProgram] = useState("");
+  const [passions, setPassions] = useState<Set<string>>(new Set());
+  const [newPassion, setNewPassion] = useState("");
+
+  const handleAddPassion = () => {
+    if (newPassion.trim()) {
+      setPassions(new Set(passions).add(newPassion.trim()));
+      setNewPassion("");
+    }
+  };
+
+  const handleRemovePassions = (passion: string) => {
+    const modifiedSet = new Set(passions);
+    modifiedSet.delete(passion);
+    setPassions(modifiedSet);
+  };
 
   return (
     <div className="friend-hub">
@@ -35,14 +49,29 @@ const FriendHub: React.FC<FriendsList> = ({ friends }) => {
         </select>
 
         <div className="passions-filter">
-          <span className="filter-label">Passions</span>
-          {passions.map((passion) => (
-            <span key={passion} className="tag">
-              {passion}
-            </span>
-          ))}
-          <button className="add-button">+</button>
+          <span className="filter-label">Passions:</span>
+          <input
+            type="text"
+            placeholder="Add passion"
+            value={newPassion}
+            onChange={(e) => setNewPassion(e.target.value)}
+            className="passion-input"
+          />
+
+          <button className="add-button" onClick={handleAddPassion}>
+            +
+          </button>
         </div>
+
+        {[...passions].map((passion) => (
+          <button
+            key={passion}
+            className="passion-tag"
+            onClick={() => handleRemovePassions(passion)}
+          >
+            {passion} ❌
+          </button>
+        ))}
       </div>
 
       <div className="friends-list">

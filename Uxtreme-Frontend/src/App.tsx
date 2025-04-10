@@ -1,15 +1,13 @@
-import { useState } from "react";
 import FriendHub from "./components/student-tinder/FriendHub";
 
 function App() {
-  const [count, setCount] = useState(0);
   const friends = [
     {
       id: 0,
       name: "user1",
       program: "SOEN",
       classYear: "2026",
-      passions: ["food", "bs"],
+      passions: new Set(["Anime", "food", "bs"]),
       clubs: ["Space Concordia", "IEEE"],
       imageUrl: "user1.jpg",
       bio: `Hi, I'm Amy, a computer science major at Concordia University. 
