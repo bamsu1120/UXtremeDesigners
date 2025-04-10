@@ -78,9 +78,22 @@
     color: white;
 }
 
+.interested.active {
+    background-color: #ffeaa7;
+    color: #2d3436;
+    font-weight: bold;
+}
+
+
 .going {
     background-color: #3b3b3b;
     color: white;
+}
+
+.going.active {
+    background-color: #55efc4;
+    color: #2d3436;
+    font-weight: bold;
 }
 
 /* on hover */

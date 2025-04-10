@@ -1,4 +1,5 @@
 import FriendHub from "./components/student-tinder/FriendHub";
+import EventHub from "./components/event-hub"
 
 function App() {
   const friends = [

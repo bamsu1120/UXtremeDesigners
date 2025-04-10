@@ -1,5 +1,7 @@
 import React from 'react';
 import './EventDetails.css';
+import { useEventContext } from '../context/EventContext';
+
 
 type EventDetailProps = {
     image: string;
@@ -31,6 +33,10 @@ const EventDetails: React.FC<EventDetailProps> = ({
     tags,
     onBack
 }) => {
+    const { interestedEvents, goingEvents, toggleInterested, toggleGoing } = useEventContext();
+    const isInterested = interestedEvents.includes(title);
+    const isGoing = goingEvents.includes(title);
+
     return (
         <div className="event-details-page">
             <button onClick={onBack}>Back</button>
@@ -48,8 +54,21 @@ const EventDetails: React.FC<EventDetailProps> = ({
             <div className="attendance-info">
                 <div className='going-interested'><strong>{attendees} Going</strong> | <strong>{interested} Interested</strong></div>
                 <div className="action-buttons">
-                    <button className="interested">Interested ?</button>
-                    <button className="going">Going ✔</button>
+                    {/* when clicking on button EventContext is called and that event is store in the array */}
+                    <button
+                        className={`interested ${isInterested ? 'active' : ''}`}
+                        onClick={() => toggleInterested(title)}
+                    >
+                        {isInterested ? 'Interested ✔' : 'Interested ?'}
+                    </button>
+
+                    <button
+                        className={`going ${isGoing ? 'active' : ''}`}
+                        onClick={() => toggleGoing(title)}
+                    >
+                        {isGoing ? 'Going ✔' : 'Going ?'}
+                    </button>
+
                     <button className="invite">Invite</button>
                 </div>
             </div>
