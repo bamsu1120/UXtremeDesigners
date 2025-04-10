@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { useState } from 'react'
 import MainPage from './components/main-page'
 import EventCard from './components/EventCard'
@@ -34,6 +35,43 @@ function App() {
       /> */}
     </>
   )
+=======
+import React from 'react';
+import './App.css';
+
+function App() {
+  return (
+    <div className="app">
+      <div className="signup-container">
+        <h1 className="signup-title">Sign Up</h1>
+        <hr className="signup-divider" />
+        <form className="signup-form">
+          <input
+            type="text"
+            className="signup-input"
+            placeholder="Username"
+          />
+          <input
+            type="email"
+            className="signup-input"
+            placeholder="Email"
+          />
+          <input
+            type="password"
+            className="signup-input"
+            placeholder="Password"
+          />
+          <input
+            type="password"
+            className="signup-input"
+            placeholder="Confirm Password"
+          />
+          <button type="submit" className="signup-button">Register</button>
+        </form>
+      </div>
+    </div>
+  );
+>>>>>>> Stashed changes
 }
 
-export default App
+export default App;
