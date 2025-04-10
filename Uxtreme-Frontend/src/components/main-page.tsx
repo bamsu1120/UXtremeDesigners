@@ -45,20 +45,20 @@ function MainPage() {
                             <img src="./src/assets/choppa.jpg" alt="Profile Picture" className='icon'/>
                         </a>
                     </div>
-                    {notifVisible &&
-                        <div className="notif-container">
-                            <div className="notif">
-                                <img src="./src/assets/choppa.jpg" alt="profile picture" className="icon"/>
-                                <p>Invited you </p>
-                                <button>Event</button>
+                        {notifVisible &&
+                            <div className="notif-container">
+                                <div className="notif">
+                                    <img src="./src/assets/choppa.jpg" alt="profile picture" className="icon"/>
+                                    <p>Invited you </p>
+                                    <button>Event</button>
+                                </div>
+                                <div className="notif">
+                                    <img src="./src/assets/choppa.jpg" alt="profile picture" className="icon"/>
+                                    <p>Invited you </p>
+                                    <button>Event</button>
+                                </div>
                             </div>
-                            <div className="notif">
-                                <img src="./src/assets/choppa.jpg" alt="profile picture" className="icon"/>
-                                <p>Invited you </p>
-                                <button>Event</button>
-                            </div>
-                        </div>
-                    }
+                        }
                 </div>
             </div>
             <div className="body-container">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './EventDetails.css';
 
 type EventDetailProps = {
@@ -33,6 +33,13 @@ const EventDetails: React.FC<EventDetailProps> = ({
     onBack,
     onRegister
 }) => {
+
+    const [inviteVisible, setInviteVisible] = useState<boolean>(false);
+
+    function toggleInvites(){
+        setInviteVisible(!inviteVisible);
+    }
+
     return (
         <div className="event-details-page">
             <button className='back-button' onClick={onBack}>Back</button>
@@ -47,16 +54,30 @@ const EventDetails: React.FC<EventDetailProps> = ({
                 <img src={image} alt={title} className="event-image" />
             </div>
 
-            <div className="attendance-info">
-                <div className='going-interested'><strong>{attendees} Going</strong> | <strong>{interested} Interested</strong></div>
-                <div className="action-buttons">
-                    <button className="interested" onClick={()=>{
-                        onRegister('Interested');
-                    }}>Interested ?</button>
-                    <button className="going" onClick={()=>{
-                        onRegister('Going');
-                    }}>Going ✔</button>
-                    <button className="invite">Invite</button>
+            <div className="yay">
+                <div className="attendance-info">
+                    <div className='going-interested'><strong>{attendees} Going</strong> | <strong>{interested} Interested</strong></div>
+                    <div className="action-buttons">
+                        <button className="interested" onClick={()=>{
+                            onRegister('Interested');
+                        }}>Interested ?</button>
+                        <button className="going" onClick={()=>{
+                            onRegister('Going');
+                        }}>Going ✔</button>
+                        <button className="invite" onClick={toggleInvites} >Invite</button>
+                    </div>
+                    {inviteVisible &&
+                            <div className="notif-container">
+                                <div className="notif invite">
+                                    <img src="./src/assets/choppa.jpg" alt="profile picture" className="icon"/>
+                                    <button>Invite</button>
+                                </div>
+                                <div className="notif invite">
+                                    <img src="./src/assets/choppa.jpg" alt="profile picture" className="icon"/>
+                                    <button>Invite</button>
+                                </div>
+                            </div>
+                        }
                 </div>
             </div>
 

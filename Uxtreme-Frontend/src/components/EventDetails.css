@@ -42,6 +42,19 @@
     width: 200px;
 }
 
+.yay {
+    position: relative;
+    display: inline-block;
+}
+
+.invite {
+    
+}
+
+.invite button {
+    width: 90px;
+}
+
 .back-button:hover {
     background-color: #d32e2e;
 }
