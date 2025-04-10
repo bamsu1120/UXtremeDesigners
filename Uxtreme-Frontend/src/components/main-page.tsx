@@ -19,6 +19,11 @@ function MainPage() {
     // Used to find in the stubs the current users friends and Events
     // const [userFriends, setUserFriends] = useState<string[]>([]);
     const [userEvents, setUserEvents] = useState<EventRegistration[]>([]);
+    const [notifVisible, setNotifVisible] = useState<boolean>(false);
+
+    function toggleNotifs(){
+        setNotifVisible(!notifVisible);
+    }
   
     return (
       <>
@@ -32,12 +37,28 @@ function MainPage() {
                         <input type="text" className='input-myLocation' placeholder='I am at...'/>
                     </form>
                 </div>
-                <div className="container">
-                    <img src="./src/assets/message.png" alt="message" />
-                    <img src="./src/assets/bell.png" alt="bell" />
-                    <a href="#">
-                        <img src="./src/assets/choppa.jpg" alt="Profile Picture" className='icon'/>
-                    </a>
+                <div className="notif-parent">
+                    <div className="container">
+                        <img src="./src/assets/message.png" alt="message" />
+                        <img src="./src/assets/bell.png" alt="bell" className="bell-icon" onClick={()=> toggleNotifs()}/>
+                        <a href="#">
+                            <img src="./src/assets/choppa.jpg" alt="Profile Picture" className='icon'/>
+                        </a>
+                    </div>
+                    {notifVisible &&
+                        <div className="notif-container">
+                            <div className="notif">
+                                <img src="./src/assets/choppa.jpg" alt="profile picture" className="icon"/>
+                                <p>Invited you </p>
+                                <button>Event</button>
+                            </div>
+                            <div className="notif">
+                                <img src="./src/assets/choppa.jpg" alt="profile picture" className="icon"/>
+                                <p>Invited you </p>
+                                <button>Event</button>
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
             <div className="body-container">
@@ -67,6 +88,7 @@ function MainPage() {
                 <div className="main-content">
                     {currentView === "Events" && 
                         <EventHub
+                            unregisterEnabled={false}
                             userEvents={userEvents}
                             setUserEvents={setUserEvents}
                             events={events as Event[]}
@@ -75,6 +97,7 @@ function MainPage() {
                     {currentView === "Friends" && <p>no</p>}
                     {currentView === "Your Events" &&    
                         <EventHub
+                            unregisterEnabled={true}
                             userEvents={userEvents}
                             setUserEvents={setUserEvents}
                             header="Your Events"

@@ -35,7 +35,7 @@ const EventDetails: React.FC<EventDetailProps> = ({
 }) => {
     return (
         <div className="event-details-page">
-            <button onClick={onBack}>Back</button>
+            <button className='back-button' onClick={onBack}>Back</button>
             <h1>{title}</h1>
             <button className="club-button">{club}</button>
             <div className="location-date">

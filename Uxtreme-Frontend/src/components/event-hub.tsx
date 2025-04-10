@@ -26,15 +26,17 @@ export type EventHubProps ={
     setUserEvents: React.Dispatch<React.SetStateAction<EventRegistration[]>>;
     header: string;
     events: Event[]
+    unregisterEnabled: boolean
 }
 
 function EventHub({
     userEvents,
     setUserEvents,
     header,
-    events
+    events,
+    unregisterEnabled
 }: EventHubProps){
- const [filteredList, setFilteredList] = useState<EventCardProps[]>(events as EventCardProps[])
+ const [filteredList, setFilteredList] = useState<Event[]>(events as Event[])
  const [detailMode, setDetailMode] = useState<boolean>(false);
  const [selectedEvent, setSelectedEvent] = useState<Event>(events.find((event)=> event.title === "") as Event);
  const [searchQuery, setSearchQuery] = useState<string>("");
@@ -44,15 +46,16 @@ function EventHub({
  //Are Friends Attending
  //Refilter Lists
 
-    //On click
-    //Add event to global stored events
-    //Have a popup alert to show that event was successfully registered.
+    function onUnregister(title: string){
+        setUserEvents([...userEvents.filter((event) => event.event.title !== title)])
+    }
+
     function registerEvent(type: 'Going' | 'Interested'){
         toast(`Event registered successfully. ${selectedEvent.title}`,{
             className: "black-background",
             progressClassName: "yellow-progress",
           });
-        const reg = userEvents.find((Registration) => Registration.event.title === selectedEvent.title)
+        const reg = userEvents.find((Registration) => Registration.event.title === selectedEvent.title);
         if(!reg){
             const registration: EventRegistration = {
                 event: selectedEvent,
@@ -66,7 +69,7 @@ function EventHub({
     }
 
     useEffect(()=>{
-        setFilteredList((events.filter((event) => event.title.toLowerCase().includes(searchQuery)) ?? []) as EventCardProps[]);
+        setFilteredList((events.filter((event) => event.title.toLowerCase().includes(searchQuery)) ?? []) as Event[]);
     },[searchQuery,events])
 
     function updateSearchQuery(event: React.ChangeEvent<HTMLInputElement>){
@@ -92,6 +95,8 @@ function EventHub({
             <div className="scroll">
                 {filteredList.map((event) => (
                     <EventCard
+                        onUnregister={onUnregister}
+                        unregisterVisible={unregisterEnabled}
                         viewDetails={loadEventDetails}
                         {...event}
                     />

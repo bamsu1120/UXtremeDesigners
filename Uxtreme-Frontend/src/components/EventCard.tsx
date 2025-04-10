@@ -12,7 +12,8 @@ export type EventCardProps = {
     capacity: number;
     isFree: boolean;
     viewDetails?: (eventTitle: string) => void;
-    unregisterVisible?: boolean
+    unregisterVisible?: boolean;
+    onUnregister: (title: string) => void;
 };
 
 const EventCard: React.FC<EventCardProps> = ({
@@ -25,28 +26,33 @@ const EventCard: React.FC<EventCardProps> = ({
     capacity,
     isFree,
     viewDetails,
-    unregisterVisible = false
+    unregisterVisible = false,
+    onUnregister
 }) => {
     return (
-        <div className="event-card">
-            {unregisterVisible && <button>unregister</button>}
-            <img src={image} alt={title} className="event-image" />
-            <div className="event-details">
-                <div className='event-header'>
-                    <h2>{title}</h2>
-                    <span className='capacity'>{attendees} / {capacity}</span>
-                </div>
-                <p>{date}</p>
-                <p>{location}</p>
-                <p className={isFree ? "free-entry" : "paid-entry"}>
-                    {isFree ? "✔ Free entry" : `$$ Paid entry`}
-                </p>
-                <div className="event-footer">
-                    <button className="club-button">{club}</button>
-                    {/* add a onClick so that it redirects to Event Details */}
-                    <button className="see-details" onClick={() => {
-                        viewDetails?.(title);
-                    }}>See Details</button>
+        <div className="yup">
+            {unregisterVisible && <button className='unregister' onClick={()=>{
+                onUnregister(title);
+            }}>unregister</button>}
+            <div className="event-card">
+                <img src={image} alt={title} className="event-image" />
+                <div className="event-details">
+                    <div className='event-header'>
+                        <h2>{title}</h2>
+                        <span className='capacity'>{attendees} / {capacity}</span>
+                    </div>
+                    <p>{date}</p>
+                    <p>{location}</p>
+                    <p className={isFree ? "free-entry" : "paid-entry"}>
+                        {isFree ? "✔ Free entry" : `$$ Paid entry`}
+                    </p>
+                    <div className="event-footer">
+                        <button className="club-button">{club}</button>
+                        {/* add a onClick so that it redirects to Event Details */}
+                        <button className="see-details" onClick={() => {
+                            viewDetails?.(title);
+                        }}>See Details</button>
+                    </div>
                 </div>
             </div>
         </div>
