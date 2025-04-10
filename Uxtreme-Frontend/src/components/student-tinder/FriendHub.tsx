@@ -13,7 +13,7 @@ const FriendHub: React.FC<FriendsList> = ({ friends }) => {
 
   const handleAddPassion = () => {
     if (newPassion.trim()) {
-      setPassions(new Set(passions).add(newPassion.trim()));
+      setPassions(new Set(passions).add(newPassion.trim().toLowerCase()));
       setNewPassion("");
     }
   };
@@ -37,7 +37,7 @@ const FriendHub: React.FC<FriendsList> = ({ friends }) => {
           <option value="" disabled>
             Program
           </option>
-          {programs.map((program) => (
+          {programs.sort().map((program) => (
             <option key={program} value={program}>
               {program}
             </option>
@@ -54,7 +54,7 @@ const FriendHub: React.FC<FriendsList> = ({ friends }) => {
             type="text"
             placeholder="Add passion"
             value={newPassion}
-            onChange={(e) => setNewPassion(e.target.value)}
+            onChange={(e) => setNewPassion(e.target.value.toLowerCase)}
             className="passion-input"
           />
 
@@ -75,9 +75,18 @@ const FriendHub: React.FC<FriendsList> = ({ friends }) => {
       </div>
 
       <div className="friends-list">
-        {friends.map((friend) => (
-          <FriendCard key={friend.id} friend={friend} />
-        ))}
+        {friends
+          .filter((friend) => {
+            return (
+              Array.from(friend.passions).some(
+                (passion) => passions.has(passion) || passions.size === 0
+              ) &&
+              (friend.program === selectedProgram || !selectedProgram)
+            );
+          })
+          .map((friend) => (
+            <FriendCard key={friend.id} friend={friend} />
+          ))}
       </div>
     </div>
   );

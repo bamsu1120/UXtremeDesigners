@@ -5,9 +5,9 @@ function App() {
     {
       id: 0,
       name: "user1",
-      program: "SOEN",
+      program: "History",
       classYear: "2026",
-      passions: new Set(["Anime", "food", "bs"]),
+      passions: new Set(["anime", "food", "bs"]),
       clubs: ["Space Concordia", "IEEE"],
       imageUrl: "user1.jpg",
       bio: `Hi, I'm Amy, a computer science major at Concordia University. 
