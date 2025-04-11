@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import './EventDetails.css';
 
+import { Friend } from './student-tinder/FriendCard';
+import { toast } from 'react-toastify';
+
 type EventDetailProps = {
     image: string;
     title: string;
@@ -16,6 +19,7 @@ type EventDetailProps = {
     tags: string[]
     onBack: () => void;
     onRegister: (rtype: 'Going' | 'Interested') => void;
+    friends: Friend[];
 };
 
 const EventDetails: React.FC<EventDetailProps> = ({
@@ -31,7 +35,8 @@ const EventDetails: React.FC<EventDetailProps> = ({
     club,
     tags,
     onBack,
-    onRegister
+    onRegister,
+    friends,
 }) => {
 
     const [inviteVisible, setInviteVisible] = useState<boolean>(false);
@@ -67,15 +72,19 @@ const EventDetails: React.FC<EventDetailProps> = ({
                         <button className="invite" onClick={toggleInvites} >Invite</button>
                     </div>
                     {inviteVisible &&
-                            <div className="notif-container">
-                                <div className="notif invite">
-                                    <img src="./src/assets/choppa.jpg" alt="profile picture" className="icon"/>
-                                    <button>Invite</button>
-                                </div>
-                                <div className="notif invite">
-                                    <img src="./src/assets/choppa.jpg" alt="profile picture" className="icon"/>
-                                    <button>Invite</button>
-                                </div>
+                            <div className="notif-container scrollx">
+                                {friends.map((friend) => 
+                                    <div className="notif invite friend-container">
+                                        <img src={friend.imageUrl} alt="profile picture" className="icon yellow-border"/>
+                                        <p>{friend.name}</p>
+                                        <button onClick={()=>{
+                                                    toast(`Invited ${friend.name} to ${title}`,{
+                                                        className: "black-background",
+                                                        progressClassName: "yellow-progress",
+                                                      });
+                                        }}>Invite</button>
+                                    </div>
+                                )}
                             </div>
                         }
                 </div>

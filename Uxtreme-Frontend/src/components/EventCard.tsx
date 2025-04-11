@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './EventCard.css'
+
+import { Friend } from './student-tinder/FriendCard';
 
 export type EventCardProps = {
     image?: string;
@@ -14,6 +16,8 @@ export type EventCardProps = {
     viewDetails?: (eventTitle: string) => void;
     unregisterVisible?: boolean;
     onUnregister: (title: string) => void;
+    attending: number[];
+    friends: Friend[];
 };
 
 const EventCard: React.FC<EventCardProps> = ({
@@ -27,13 +31,32 @@ const EventCard: React.FC<EventCardProps> = ({
     isFree,
     viewDetails,
     unregisterVisible = false,
-    onUnregister
+    onUnregister,
+    friends,
+    attending
 }) => {
+
+    const [friendsAreGoing, setFriendsAttending] = useState<boolean>();
+
+    useEffect(()=>{
+        setFriendsAttending(attending.some((attendee) => friends.find((friend) => attendee === friend.id)))
+    },[friends])
+
+
     return (
         <div className="yup">
             {unregisterVisible && <button className='unregister' onClick={()=>{
                 onUnregister(title);
             }}>unregister</button>}
+            {friendsAreGoing && <div className="friends-cards">
+            {
+                friends.map((friend) => {
+                    if(attending.includes(friend.id)){
+                        return <img src={friend.imageUrl} alt="pfp" className='icon' />
+                    }
+                })
+            }
+            </div>}
             <div className="event-card">
                 <img src={image} alt={title} className="event-image" />
                 <div className="event-details">

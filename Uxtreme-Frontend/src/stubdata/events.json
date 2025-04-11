@@ -12,7 +12,8 @@
       "capacity": 20,
       "isFree": true,
       "description": "Join the Concordia Outdoors Club for an exciting hike up Mont Royal. Explore the beautiful nature trails and enjoy breathtaking views of Montréal. A great way to get active and meet new friends!",
-      "tags": ["Hiking", "Outdoor", "Mont Royal", "Free", "Concordia Outdoors Club"]
+      "tags": ["Hiking", "Outdoor", "Mont Royal", "Free", "Concordia Outdoors Club"],
+      "attending": [1, 5, 9]
     },
     {
       "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/e0/ce/85/sunset-beach.jpg?w=900&h=500&s=1",
@@ -27,7 +28,8 @@
       "capacity": 30,
       "isFree": false,
       "description": "Relax and unwind with a peaceful sunset yoga session at Parc Jean-Drapeau. Led by the Concordia Wellness Society, this class is designed for all levels. Bring your mat and enjoy the calming sounds of nature!",
-      "tags": ["Yoga", "Sunset", "Wellness", "Concordia Wellness Society", "Relaxation"]
+      "tags": ["Yoga", "Sunset", "Wellness", "Concordia Wellness Society", "Relaxation"],
+      "attending": [0, 4, 8]
     },
     {
       "image": "https://images.unsplash.com/photo-1509223197845-458d87318791",
@@ -42,7 +44,8 @@
       "capacity": 100,
       "isFree": true,
       "description": "Join the Concordia Computer Science Society for a fascinating discussion on the future of Artificial Intelligence in 2025. Learn from experts and gain valuable insights into the evolving tech landscape.",
-      "tags": ["Tech Talks", "AI", "Artificial Intelligence", "Concordia Computer Science Society", "Free"]
+      "tags": ["Tech Talks", "AI", "Artificial Intelligence", "Concordia Computer Science Society", "Free"],
+      "attending": [2, 3, 6, 7]
     },
     {
       "image": "https://cdn.thewirecutter.com/wp-content/media/2024/11/BEST-BOARD-GAMES-2048px-DSC9916.jpg?auto=webp&quality=75&width=1024",
@@ -57,7 +60,8 @@
       "capacity": 20,
       "isFree": false,
       "description": "Come and join the Concordia Tabletop Club for a fun evening of board games! Whether you're a seasoned gamer or a beginner, there's a game for everyone. Enjoy some snacks, make new friends, and relax while playing your favorite board games.",
-      "tags": ["Board Games", "Tabletop Games", "Social", "Concordia Tabletop Club"]
+      "tags": ["Board Games", "Tabletop Games", "Social", "Concordia Tabletop Club"],
+      "attending": [1, 7, 8]
     },
     {
       "image": "https://images.unsplash.com/photo-1506459225024-1428097a7e18",
@@ -72,7 +76,8 @@
       "capacity": 40,
       "isFree": true,
       "description": "Explore the beautiful sights of downtown Montréal with the Concordia Photography Society. This photo walk is perfect for photographers of all skill levels. Capture the essence of the city through your lens and share tips with fellow photography enthusiasts.",
-      "tags": ["Photography", "Photo Walk", "Montréal", "Free", "Concordia Photography Society"]
+      "tags": ["Photography", "Photo Walk", "Montréal", "Free", "Concordia Photography Society"],
+      "attending": [3, 4, 2]
     },
     {
       "image": "https://escapemotions1.b-cdn.net/images/rebelle7/title_images/r7-background-1_v1.jpg",
@@ -87,7 +92,8 @@
       "capacity": 20,
       "isFree": false,
       "description": "Unleash your creativity and join the Concordia Arts Collective for a painting session with friends! Whether you're a beginner or an experienced artist, this event is a great way to explore your artistic side in a fun, social atmosphere.",
-      "tags": ["Painting", "Art", "Social", "Concordia Arts Collective"]
+      "tags": ["Painting", "Art", "Social", "Concordia Arts Collective"],
+      "attending": [3, 4, 2]
     },
     {
       "image": "https://media.self.com/photos/6470bfe9ba253cb4b6e01343/16:9/w_7359,h_4139,c_limit/hiking.jpeg",
@@ -102,7 +108,8 @@
       "capacity": 30,
       "isFree": true,
       "description": "Join the Concordia Hiking Club for an unforgettable weekend hike to Mount Sutton. Enjoy stunning views, beautiful nature trails, and the perfect way to bond with fellow hikers. Don't forget your hiking boots and water!",
-      "tags": ["Hiking", "Outdoor", "Weekend", "Concordia Hiking Club"]
+      "tags": ["Hiking", "Outdoor", "Weekend", "Concordia Hiking Club"],
+      "attending": [3, 4, 2]
     },
     {
       "image": "https://blog.nsaspeaker.org/hubfs/Imported_Blog_Media/nsa-blog-public-speaking-min.jpg",
@@ -117,7 +124,8 @@
       "capacity": 60,
       "isFree": true,
       "description": "Improve your public speaking skills in this hands-on workshop hosted by the Concordia Speech & Debate Society. Whether you're preparing for a presentation or just want to become more confident speaking in front of others, this workshop is for you.",
-      "tags": ["Public Speaking", "Workshop", "Concordia Speech & Debate Society", "Free"]
+      "tags": ["Public Speaking", "Workshop", "Concordia Speech & Debate Society", "Free"],
+      "attending": [3, 4, 2]
     },
     {
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLrv37-TXIDJ7AyrvkANfbYxk_MZ0ZWVNH8w&s",
@@ -132,7 +140,8 @@
       "capacity": 50,
       "isFree": false,
       "description": "Kickstart your coding journey with this beginner-friendly React bootcamp hosted by the Concordia Coding Club. Learn the fundamentals of React and how to build dynamic web applications. This event is perfect for anyone looking to get into frontend development.",
-      "tags": ["React", "Coding", "Frontend Development", "Concordia Coding Club"]
+      "tags": ["React", "Coding", "Frontend Development", "Concordia Coding Club"],
+      "attending": [3, 4, 2]
     },
     {
       "image": "https://media.npr.org/assets/img/2019/10/11/jazznight_wide-935d952bd5017d8ecf5fdf7734db6f318cd3de9e.jpg",
@@ -147,7 +156,8 @@
       "capacity": 60,
       "isFree": false,
       "description": "Enjoy a night of live jazz music at Le Piano Rouge with the Concordia Jazz Society. Come and experience great music, good vibes, and meet fellow jazz lovers. Perfect for anyone who enjoys a night out with live entertainment!",
-      "tags": ["Jazz", "Live Music", "Night Out", "Concordia Jazz Society"]
+      "tags": ["Jazz", "Live Music", "Night Out", "Concordia Jazz Society"],
+      "attending": [3, 4, 2]
     }
   ]
   

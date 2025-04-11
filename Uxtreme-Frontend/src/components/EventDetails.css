@@ -170,3 +170,14 @@
 .hashtag:hover {
     background-color: #3c3c3c;
 }
+
+.scrollx {
+    overflow-y: scroll;
+    gap: 20px;
+
+    padding: 20px;
+}
+
+.yellow-border {
+    border: solid 2px yellow;
+}

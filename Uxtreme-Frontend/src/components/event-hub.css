@@ -13,17 +13,32 @@
     height: 150px;
     width: 100%;
     display: flex;
-    flex-direction: Column;
     gap: 20px;
+    z-index: 2;
 }
 
 .top h1 {
     color: aliceblue;
 }
 
+.right-top {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.trending {
+  margin: 40px;
+  width: 200px;
+  height: 150px;
+
+  border: solid 1px #FF7072;
+  border-radius: 16px;
+}
+
 .scroll {
     flex: 1;
-    height: 500px;
+    height: 450px;
     width: 100%;
     gap: 100px;
     overflow-x: auto;
@@ -119,3 +134,60 @@
   .toggle-switch input[type="checkbox"]:checked + .toggle-switch-background .toggle-switch-handle {
     transform: translateX(40px);
   }
+
+
+  .add-button {
+    font-size: 18px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.passion-input {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  width: 200px;
+  margin-right: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.passion-input:focus {
+  outline: none;
+  border-color: #6c63ff;
+  box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+}
+
+.passions-filter {
+  display: flex;
+  align-items: center;
+  background-color: #1f1f1f;
+  padding: 10px 15px;
+  border-radius: 10px;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  width: 400px;
+}
+
+.filter-label {
+  color: aliceblue;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.passion-tag {
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  padding: 0.3rem 0.7rem;
+  margin: 0.2rem;
+  display: inline-block;
+}
+
+.left-top {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}

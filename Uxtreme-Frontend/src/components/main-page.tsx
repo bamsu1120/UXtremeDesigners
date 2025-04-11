@@ -92,6 +92,8 @@ function MainPage() {
                             unregisterEnabled={false}
                             userEvents={userEvents}
                             setUserEvents={setUserEvents}
+                            userFriends={userFriends}
+                            setUserFriends={setUserFriends}
                             events={events as Event[]}
                             header="Event Hub"
                         />}
@@ -106,6 +108,8 @@ function MainPage() {
                             unregisterEnabled={true}
                             userEvents={userEvents}
                             setUserEvents={setUserEvents}
+                            userFriends={userFriends}
+                            setUserFriends={setUserFriends}
                             header="Your Events"
                             events={userEvents.map((reg) => reg.event)}
                         />}

@@ -107,9 +107,9 @@ const FriendHub: React.FC<FriendsList> = ({friends, setFriends}) => {
               (friend.program === selectedProgram || !selectedProgram)
             );
           })
-          .map((friend) => (
-            <FriendCard key={friend.id} friend={friend} onBlock={handleBlock} onFollow={handleFollow}/>
-          ))}
+          .map((friend) => {
+            if(!friends.find((actualfriend) => friend.id === actualfriend.id)) return <FriendCard key={friend.id} friend={friend} onBlock={handleBlock} onFollow={handleFollow}/>;
+          })}
       </div>
     </div>
   );
