@@ -1,6 +1,6 @@
 // SignUp.tsx
 import { NavLink } from "react-router-dom";
-import "./SignUp.css";
+import "./signup.css";
 
 const SignUp = () => {
   return (
@@ -38,24 +38,25 @@ const SignUp = () => {
           <div className="checkbox-container">
             <input type="checkbox" id="acknowledge" />
             <label htmlFor="acknowledge">
-              I acknowledge that only undergraduate or graduate Concordia students
-              are allowed to use this application.
+              I acknowledge that only undergraduate or graduate Concordia
+              students are allowed to use this application.
             </label>
           </div>
 
           <div className="bottom-container">
             {/* Register Button */}
-            <NavLink
-                to="/home"
-                className="navlink"
-              >
-            <button type="submit" className="register-button">
+            <NavLink to="/home" className="navlink">
+              <button type="submit" className="register-button">
                 Register
-            </button>
+              </button>
             </NavLink>
 
             {/* Image Container */}
-            <img src="./src/assets/conUlogo.png" alt="concordia" height={"120px"}/>
+            <img
+              src="./src/assets/conUlogo.png"
+              alt="concordia"
+              height={"120px"}
+            />
           </div>
         </form>
       </div>
